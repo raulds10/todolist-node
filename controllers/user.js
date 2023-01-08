@@ -76,6 +76,7 @@ exports.uploadImage = async (req, res) => {
     .png()
     .toBuffer();
   req.user.avatar = buffer;
+  console.log("el post de image",req.user.avatar)
   await req.user.save();
   res.json({
     succes: true
